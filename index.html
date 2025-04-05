@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/sst" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Eureka Collections</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0 order-lg-0 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-item-center justify-content-center" href="#"><img
+                    src="Images/shopping-bag-icon.png" class="bg-white d-none d-sm-block attireimg" alt=""><span
+                    class="text-uppercase px-3 navbarbtn">Eureka Collections</span></a>
+            <!-- <div class="d-flex justify-content-center align-item-center order-lg-2 ms-auto carticons">
+                <button class="btn cartitems"><span><i
+                            class="fa fa-shopping-cart text-white iconbtn"></i></span></button>
+                <button class="btn cartitems"><span><i class="fa fa-heart iconbtn"></i></span></button>
+                <button class="btn cartitems"><span><i class="fa fa-search iconbtn"></i></span></button>
+            </div> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-lg-1" id="navmenu">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase navbtn py-3" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase navbtn py-3" href="#collection">collection</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase navbtn py-3" href="#aboutus">about us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase navbtn py-3" href="#popular">popular</a>
+                    </li>
+                    <li>
+                    <a class="btn" href="#cart">
+                        <i class="fa fa-shopping-cart text-white iconbtn"></i>
+                    </a>
+                    </li> 
+                    <!-- <div class="d-lg-none d-md-none hamburgeritems">
+                        <!-- <button class="btn" href="#cart"><i class="fa fa-shopping-cart text-white iconbtn"></i></button> -->
+
+                        
+                        <!-- <button class="btn"><i class="fa fa-heart iconbtn"></i></button>
+                        <button class="btn"><i class="fa fa-search iconbtn"></i></button>
+                    </div> --> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Section End -->
+
+    <!-- Header Section -->
+    <section class="text-center d-none d-lg-block">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image bg-img-1 active">
+                    <img src="Images/banner5.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">best collection</h1>
+                        <p class="carouselP">We all need a splash of bad taste it's hearty, it's healthy, it's
+                            physical.<br>
+                            You can choose from a variety of neckline dresses, sparkle dresses,<br> and evening dresses
+                            covered with sequins.
+                        </p>
+                        <div class="btn buybtn"><a class="btn salebtn m-2" href="#collection">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image bg-img-2">
+                    <img src="Images/banner14.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">biggest sales</h1>
+                        <p class="carouselP">Know Your Buyer and speak DIRECTLY to them. Be PERSONABLE! Be<br>
+                            INFORMATIVE
+                            and CONCISE. You won’t perform at your best if you’re<br> irritated by your clothing.</p>
+                        <div class="btn buybtn"><a class="btn salebtn m-2" href="#collection">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image bg-img-3">
+                    <img src="Images/banner15.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">Summer show</h1>
+                        <p class="carouselP">Our dresses are designed to make you feel like the confident<br> and
+                            stylish.
+                            They feature classical detailing in a range of colors,<br> letting you bring a classic touch
+                            to
+                            summer trends.
+                        </p>
+                        <div class="btn buybtn"><a class="btn salebtn m-2" href="#collection">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header Section End -->
+
+    <!--Medium Header Section -->
+    <section class="text-center d-lg-none d-md-block">
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-image bg-img-1 active">
+                    <img src="Images/banner5-b.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">best collection</h1>
+                        <p class="carouselP">We all need a splash of bad taste it's hearty, it's healthy, it's physical.
+                            You can choose from a variety of neckline dresses, sparkle dresses, and evening dresses
+                            covered with sequins.
+                        </p>
+                        <div class="btn buybtn">Buy Now</div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image bg-img-2">
+                    <img src="Images/banner14-b.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">biggest sales</h1>
+                        <p class="carouselP">Know Your Buyer and speak DIRECTLY to them. Be PERSONABLE! Be
+                            INFORMATIVE
+                            and CONCISE. You won’t perform at your best if you’re irritated by your clothing.</p>
+                        <div class="btn buybtn">Buy Now</div>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-image bg-img-3">
+                    <img src="Images/banner15-b.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="fw-bold text-uppercase">Summer show</h1>
+                        <p class="carouselP">Our dresses are designed to make you feel like the confident and
+                            stylish.
+                            They feature classical detailing in a range of colors, letting you bring a classic touch
+                            to
+                            summer trends.</p>
+                        <div class="btn buybtn">Buy Now</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Medium Header Section End -->
+
+    <section class="section-bg mt-5 mb-5" id="collection">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2 class="section-text position-relative d-inline-block">
+                  Collection
+                </h2>
+            </div>
+            <div class="row g-0">
+                <div class="d-flex flex-wrap justify-content-center mt-4 filter-button-group">
+                    <button type="button" class="btn salebtn active-filter-btn m-2" data-filter="*">All</button>
+                    <a class="btn salebtn m-2" href="#popular">Best Sellers</a>
+                </div>
+            </div>
+
+            <div class="special-list row mt-4 gx-0 gy-3">
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img-design position-relative overflow-hidden">
+                        <img src="Images/special_product_1.jpg" class="w-100 mb-2" alt="">
+                        <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <div class="rating mt-2">
+                            <p class="my-1">item 1</p>
+                            <span class="fwbold">$ 35.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                        </div>
+                        <button class="btn salebtn mt-2">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img-design position-relative overflow-hidden">
+                        <img src="Images/special_product_2.jpg" class="w-100 mb-2" alt="">
+                        <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <div class="rating mt-2">
+                            <p class="my-1">item 2</p>
+                            <span class="fwbold">$ 45.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                        </div>
+                        <button class="btn salebtn mt-2">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img-design position-relative overflow-hidden">
+                        <img src="Images/special_product_3.jpg" class="w-100 mb-2" alt="">
+                        <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <div class="rating mt-2">
+                            <p class="my-1">item 3</p>
+                            <span class="fwbold">$ 65.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                        </div>
+                        <button class="btn salebtn mt-2">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img-design position-relative overflow-hidden">
+                        <img src="Images/special_product_4.jpg" class="w-100 mb-2" alt="">
+                        <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                    </div>
+                    <div class="text-center">
+                        <div class="rating mt-2">
+                            <p class="my-1">item 4</p>
+                            <span class="fwbold">$ 55.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                        </div>
+                        <button class="btn salebtn mt-2">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="special-list row mt-4 gx-0 gy-3">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img-design position-relative overflow-hidden">
+                            <img src="Images/special_product_1.jpg" class="w-100 mb-2" alt="">
+                            <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-2">
+                                <p class="my-1">item 19</p>
+                                <span class="fwbold">$ 35.50</span>
+                                <select class="form-select size-select" required>
+                                    <option value="">Select Size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                </select>
+                            </div>
+                            <button class="btn salebtn mt-2">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img-design position-relative overflow-hidden">
+                            <img src="Images/special_product_2.jpg" class="w-100 mb-2" alt="">
+                            <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-2">
+                                <p class="my-1">item 28</p>
+                                <span class="fwbold">$ 45.50</span>
+                                <select class="form-select size-select" required>
+                                    <option value="">Select Size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                </select>
+                            </div>
+                            <button class="btn salebtn mt-2">Add to Cart</button>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img-design position-relative overflow-hidden">
+                            <img src="Images/special_product_3.jpg" class="w-100 mb-2" alt="">
+                            <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-2">
+                                <p class="my-1">item 31</p>
+                                <span class="fwbold">$ 65.50</span>
+                                <select class="form-select size-select" required>
+                                    <option value="">Select Size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                </select>
+                            </div>
+                            <button class="btn salebtn mt-2">Add to Cart</button>
+                        </div>
+                    </div>
+    
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img-design position-relative overflow-hidden">
+                            <img src="Images/special_product_4.jpg" class="w-100 mb-2" alt="">
+                            <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-2">
+                                <p class="my-1">item 42</p>
+                                <span class="fwbold">$ 55.50</span>
+                                <select class="form-select size-select" required>
+                                    <option value="">Select Size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">Extra Large</option>
+                                </select>
+                            </div>
+                            <button class="btn salebtn mt-2">Add to Cart</button>
+                        </div>
+                    </div>
+
+
+                    <div class="special-list row mt-4 gx-0 gy-3">
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_1.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 12</p>
+                                    <span class="fwbold">$ 35.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_2.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 24</p>
+                                    <span class="fwbold">$ 45.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_3.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 36</p>
+                                    <span class="fwbold">$ 65.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_4.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 48</p>
+                                    <span class="fwbold">$ 55.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>    
+
+                    <div class="special-list row mt-4 gx-0 gy-3">
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_1.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 11</p>
+                                    <span class="fwbold">$ 35.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div> 
+                        
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_2.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 22</p>
+                                    <span class="fwbold">$ 45.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_3.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 33</p>
+                                    <span class="fwbold">$ 65.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                            <div class="special-img-design position-relative overflow-hidden">
+                                <img src="Images/special_product_4.jpg" class="w-100 mb-2" alt="">
+                                <span class="position-absolute special-img"><i class="fas fa-star starcolor"></i></span>
+                            </div>
+                            <div class="text-center">
+                                <div class="rating mt-2">
+                                    <p class="my-1">item 44</p>
+                                    <span class="fwbold">$ 55.50</span>
+                                    <select class="form-select size-select" required>
+                                        <option value="">Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">Extra Large</option>
+                                    </select>
+                                </div>
+                                <button class="btn salebtn mt-2">Add to Cart</button>
+                                
+                            </div>
+                        </div>    
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section text-center text-sm-start py-5">
+        <div class="container blog-section-container">
+            <div class="row blog-section-row d-md-flex justify-content-center align-items-center">
+                <div class="blog-section-text">
+                    <h2>
+                        Discount Upto 40%
+                    </h2>
+                    <h1 class="fwbold">
+                        Grand Sale Offers
+                    </h1>
+                    <div class="btn buybtn"><a class="btn salebtn m-2" href="#popular">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+<section class="container mt-5" id="cart">
+    <h2 class="text-center">Your Shopping Cart</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Item Name</th>
+                <th>Size</th>  
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <h3 class="text-center mt-4">Checkout</h3>
+    <form id="checkout-form" action="https://formsubmit.co/afurimbule@gmail.com" method="POST" class="mt-3">
+        
+    
+        
+        <div class="mb-3">
+            <label for="delivery">Delivery</label>
+            <input type="checkbox" id="delivery" name="delivery" style="margin-left: 70px;">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required aria-describedby="phoneHelp">
+            <div id="phoneHelp" class="form-text">We'll use this to contact you about your order.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location">Address</label>
+            <input type="text" id="location" name="location" readonly>
+        </div>
+
+        <div id="map-container" style="display: none;">
+            <h4>Select Delivery Location:</h4>
+            <div id="map" style="height: 300px; border: 1px solid #ccc;"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="payment" class="form-label">Payment Method:</label>
+            <select id="payment" class="form-select" name="payment" required>
+                <option value="credit_card">CBE Birr</option>
+                <option value="paypal">Tele Birr</option>
+        
+            </select>
+        </div>
+
+        <!-- QR Code Section (add this part below payment method) -->
+        <div id="qr-section" style="display: none;" class="text-center mb-4">
+            <h5>Scan QR to Pay</h5>
+            <img id="qr-image" src="" alt="Payment QR Code" style="max-width: 200px;">
+            <p><a id="qr-link" href="#" target="_blank">Or pay via link</a></p>
+        </div>
+
+        <!-- Transaction Number Field -->
+        <div id="transaction-number-field" style="display: none;" class="mb-3">
+            <label for="transaction-number" class="form-label">Transaction Number:</label>
+            <input type="text" class="form-control" id="transaction-number" name="transaction_number" required>
+        </div>
+
+        <div id="cart-quantities"></div>
+
+        <input type="hidden" id="cart-data" name="cart_data">
+        
+        <button type="submit" class="btn btn-primary w-100">Submit Order</button>
+    </form>
+    
+    
+</section>
+
+
+<script>
+    const paymentSelect = document.getElementById("payment");
+    const qrSection = document.getElementById("qr-section");
+    const qrImage = document.getElementById("qr-image");
+    const qrLink = document.getElementById("qr-link");
+    const txnField = document.getElementById("transaction-number-field");
+
+    paymentSelect.addEventListener("change", function () {
+        const selected = this.value;
+
+        if (selected === "credit_card") {
+            // CBE Birr
+            qrImage.src = "Images/your-cbe-qr.png";
+            qrLink.href = "https://cbe-payment-link.com";
+            qrLink.textContent = "Pay with CBE Birr";
+            qrSection.style.display = "block";
+            txnField.style.display = "block";
+        } else if (selected === "paypal") {
+            // Tele Birr
+            qrImage.src = "Images/your-telebirr-qr.png";
+            qrLink.href = "https://telebirr-payment-link.com";
+            qrLink.textContent = "Pay with Tele Birr";
+            qrSection.style.display = "block";
+            txnField.style.display = "block";
+        } else {
+            qrSection.style.display = "none";
+            txnField.style.display = "none";
+        }
+    });
+</script>
+
+
+
+<!-- Include Leaflet for Map -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const deliveryCheckbox = document.getElementById("delivery");
+        const mapContainer = document.getElementById("map-container");
+        const locationInput = document.getElementById("location");
+
+        let map, lastMarker;
+
+        deliveryCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                mapContainer.style.display = "block";
+
+                if (!map) {
+                    map = L.map('map').setView([11.5936, 37.3908], 13); // Centered in Bahir Dar, Ethiopia
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    map.on('click', function(e) {
+                        const lat = e.latlng.lat;
+                        const lng = e.latlng.lng;
+
+                        if (lastMarker) {
+                            map.removeLayer(lastMarker);
+                        }
+                        lastMarker = L.marker([lat, lng]).addTo(map);
+
+                        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`)
+                            .then(response => response.json())
+                            .then(data => {
+                                const address = data.display_name || 'Unknown address';
+                                locationInput.value = `${address} (${lat}, ${lng})`;
+                            })
+                            .catch(error => {
+                                console.error('Error fetching address:', error);
+                            });
+                    });
+                }
+            } else {
+                mapContainer.style.display = "none";
+                locationInput.value = "";
+            }
+        });
+    });
+</script>
+
+<!-- Shopping Cart Section End -->
+
+
+
+    <section class="about-section text-center text-sm-start" id="aboutus">
+        <div class="container p-5">
+            <div class="section-title text-center">
+                <h2 class="section-text text-white position-relative d-inline-block">
+                    About Us
+                </h2>
+            </div>
+            <div class="about-section-image d-sm-flex align-items-center justify-content-between py-5">
+                <div>
+                    <p class="about-section-para">
+                        Where Style Meets Passion
+                        <br>
+                        <br>
+                        <br> At Eureka, fashion isn’t just about clothing – it’s about self-expression,
+                         confidence, and creativity. We are a modern fashion store dedicated to bringing you the 
+                         latest styles, high-quality materials, and a shopping experience that celebrates your unique identity.</p>
+      
+                    </p>
+                </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="Images/about_us.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-section" id="popular">
+        <div class="container p-5">
+            <div class="section-title text-center">
+                <h2 class="section-text position-relative d-inline-block">
+                    Best Sellers
+                </h2>
+            </div>
+            <div class="row mt-5">
+                <div class="top-column col-md-6 col-lg-4 py-3">
+                    <h2 class="fs-5 py-3">
+                        Top Rated
+                    </h2>
+                    <div class="popular-image d-flex align-items-center-justify-content-start mb-3">
+                        <img src="Images/top_rated_1.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Blue Shirt</p>
+                            <span>$ 45.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="popular-image d-flex align-items-center-justify-content-start mb-3">
+                        <img src="Images/top_rated_2.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Blue Watch</p>
+                            <span>$ 55.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="popular-image d-flex align-items-center-justify-content-start">
+                        <img src="Images/top_rated_3.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Red Hoddie</p>
+                            <span>$ 35.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-column col-md-6 col-lg-4 py-3">
+                    <h2 class="fs-5 py-3">With Discount</h2>
+                
+                    <div class="popular-image d-flex align-items-center justify-content-start mb-3">
+                        <img src="Images/best_selling_1.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Grey Jacket</p>
+                            <span>$ 65.50</span><br>
+                            <span style="color: red;"><s> $ 93.5</s> | 30%</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                
+                    <div class="popular-image d-flex align-items-center justify-content-start mb-3">
+                        <img src="Images/best_selling_2.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Sweat Shirt</p>
+                            <span>$ 65.50</span><br>
+                            <span style="color: red;"><s> $ 93.5</s> | 30%</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                
+                    <div class="popular-image d-flex align-items-center justify-content-start">
+                        <img src="Images/best_selling_3.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">T-Shirt</p>
+                            <span>$ 65.50</span><br>
+                            <span style="color: red;"><s> $ 93.5</s> | 30%</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="top-column col-md-6 col-lg-4 py-3">
+                    <h2 class="fs-5 py-3">
+                        Most Selling
+                    </h2>
+                    <div class="popular-image d-flex align-items-center-justify-content-start mb-3">
+                        <img src="Images/on_sale_1.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Clutch</p>
+                            <span>$ 55.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="popular-image d-flex align-items-center-justify-content-start mb-3">
+                        <img src="Images/on_sale_2.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Black Hoddie</p>
+                            <span>$ 25.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="popular-image d-flex align-items-center-justify-content-start">
+                        <img src="Images/on_sale_3.jpg" class="image-fluid w-25" alt="">
+                        <div class="px-3">
+                            <p class="mb-1">Oxford</p>
+                            <span>$ 75.50</span>
+                            <select class="form-select size-select" required>
+                                <option value="">Select Size</option>
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                            </select>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-section bg-dark text-white">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 py-3">
+                    <h3 class="text-decoration-none navbar-brand text-uppercase">Eureka</h3>
+                    <p class="pt-4 text-white text-muted">We are a passionate team of fashion lovers committed to offering trendy, affordable, and high-quality clothing for women. From everyday essentials to standout pieces,
+                         we provide collections that match your lifestyle, mood, and personality.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3 py-3">
+                    <h5 class="fw-light navbar-brand">Links</h5>
+                    <ul class="list-unstyled pt-3">
+                        <li class="my-2">
+                            <a href="#" class="text-decoration-none text-white text-muted"><i
+                                    class="fas fa-chevron-right me-3"></i>Home</a>
+                        </li>
+                        <li class="my-2">
+                            <a href="#collection" class="text-decoration-none text-white text-muted"><i
+                                    class="fas fa-chevron-right me-3"></i>Collection</a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="#popular" class="text-decoration-none text-white text-muted"><i
+                                    class="fas fa-chevron-right me-3"></i>Popular</a>
+                        </li>
+                        
+                        <li class="my-2">
+                            <a href="#aboutus" class="text-decoration-none text-white text-muted"><i
+                                    class="fas fa-chevron-right me-3"></i>About Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3 py-3">
+                    <h5 class="fw-light pb-4 navbar-brand">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-map-marked-alt"></i></span>
+                        <span class="fw-light">Bahir Dar ,k-04</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-envelope"></i></span>
+                        <span class="fw-light">yishak@email.com</span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3"><i class="fas fa-phone-alt"></i></span>
+                        <span class="fw-light">0963826373</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 py-3">
+                    <h5 class="fw-light navbar-brand">Follow Us</h5>
+                    <div class="">
+                        <ul class="d-flex list-unstyled pt-3">
+                            <li>
+                                <a href="https://www.facebook.com" class="text-decoration-none text-white text-muted fs-4 me-4"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/" class="text-decoration-none text-white text-muted fs-4 me-4"><i
+                                        class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com/" class="text-decoration-none text-white text-muted fs-4 me-4"><i
+                                        class="fab fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://instagram.com/" class="text-decoration-none text-white text-muted fs-4 me-4"><i
+                                        class="fab fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/eurekadesigns" class="text-decoration-none text-white text-muted fs-4 me-4"><i
+                                        class="fab fa-telegram-plane"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+    <script src="JS/cart.js"></script>
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
+    <!-- <script src="JS/code.jquery.com_jquery-3.7.0.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

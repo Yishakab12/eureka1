@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <h2>Shopping Cart</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <h3>Checkout</h3>
+    <form id="checkout-form">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="payment">Payment Method:</label>
+        <select id="payment" name="payment" required>
+            <option value="credit_card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bank_transfer">Bank Transfer</option>
+        </select>
+
+        <input type="hidden" id="cart-data" name="cart_data">
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartDisplay() {
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                let row = `<tr>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td><button onclick="removeItem(${index})">Remove</button></td>
+                </tr>`;
+                cartItems.innerHTML += row;
+            });
+            document.getElementById('cart-data').value = JSON.stringify(cart);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            alert('Order submitted successfully!');
+            localStorage.removeItem('cart');
+            cart = [];
+            updateCartDisplay();
+        });
+
+        updateCartDisplay();
+    </script>
+</body>
+</html>
